@@ -6,19 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LeaveManagementSystem1.Web.Data;
-using LeaveManagementSystem1.Web.Models.LeaveTypes;
 using AutoMapper;
 using LeaveManagementSystem1.Web.Services;
 using System.Runtime.InteropServices;
 
+
 namespace LeaveManagementSystem1.Web.Controllers
 {
+    [Authorize(Roles = Roles.Supervisor)]
     public class LeaveTypesController(ILeaveTypesServices _leaveTypesServices) : Controller
     {
-        
         private const string NameExistValidationMessage = "This leave type already exist in the database";
        
-
 
 
         // GET: LeaveTypes
@@ -156,6 +155,7 @@ namespace LeaveManagementSystem1.Web.Controllers
             await _leaveTypesServices.Remove(id);
             return RedirectToAction(nameof(Index));
         }
+
 
         
     

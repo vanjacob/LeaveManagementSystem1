@@ -98,6 +98,8 @@ namespace LeaveManagementSystem1.Web.Areas.Identity.Pages.Account
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                _signInManager.UserManager.PasswordHasher = new PasswordHasher<ApplicationUser>();
+
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {

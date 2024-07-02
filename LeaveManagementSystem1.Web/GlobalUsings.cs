@@ -16,3 +16,7 @@ global using Microsoft.Extensions.Logging;
 global using LeaveManagementSystem1.Web.Common;
 global using System.Net.Mail;
 global using LeaveManagementSystem1.Web.Models.LeaveTypes;
+global using LeaveManagementSystem1.Web.Models.LeaveRequests.cs;
+global using LeaveManagementSystem1.Web.Models.LeaveRequests;
+
+
